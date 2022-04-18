@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        <meta >
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+    
+    <style>
+    
+    .botaoLogar{
+    background-color: #44a43c;
+    height: 50px;
+  	width: 300px;
+    border-radius: 10px;
+    border-bottom-color: #44a43c;
+    }
+    
+    .botaoLogar:hover{
+    background-color: green;
+    }
+    
+    
+    #table{
+    
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 360px;
+	margin-right: 360px;
+	margin-top: 40px;
+	margin-bottom: 0px;
+	
+    -webkit-box-shadow: 9px 7px 5px rgba(211,211,211, 0.77);
+		-moz-box-shadow:    9px 7px 5px rgba(211,211,211, 0.77);
+		box-shadow:         9px 7px 5px rgba(211,211,211, 0.77);
+	
+    }
+    
+    @media (max-width: 600px) {
+     table{padding: 20px;}
+	}
+   
+    @media (max-width: 600px) {
+     .imglogo{width: 150px;}
+	}
+    
+    
+    #LinkEsqueciSenha{
+    color: #44a43c;
+    text-decoration: none;
+    text-align: center;
+    }
+    
+    
+    
+    .imglogo{
+    text-align: center;
+    }
+    
+    .imgLogoLogin{
+   	margin-left: 570px;
+    width: 200px;
+    margin-top: 30px;
+    }
+    
+    .formClass{
+    text-align: center;
+    }
+    
+    hr{
+    width: 100%;
+    color: red;
+    }
+    .tituloLogin{
+    margin-top: 10px;
+    color: #44a43c;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    }
+    
+    .txDados{
+    color: #44a43c;
+    font-size: 15px;
+    text-align: center;
+    
+    }
+    
+    h4{
+    color: white;
+    }
+    
+    #divEmail{
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#44a43c;
+  border:solid 2px #fffff;
+  height: 50px;
+  width: 300px;
+  border-radius: 10px;
+   
+}
+
+#txtBusca{
+  margin-top: 10px;
+  float: left;
+  background-color:transparent;
+  padding-left:5px;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:250px;
+}
+
+#divSenha{
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#44a43c;
+  border:solid 2px #fffff;
+  height: 50px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.imgCmpLogin{
+float: left;
+width: 30px;
+margin-left: 10px;
+margin-top: 10px;
+}
+
+hr{
+background-color: #44a43c;
+
+}
+
+.imgCadeado{
+width: 20px;
+
+}
+@media (max-width: 600px) {
+     .imgLogoLogin{
+     margin-left: 150px;
+     }
+	}
+	
+@media (max-width: 600px) {
+     #table{width: 300px;}
+	}
+@media (max-width: 600px) {
+     #table{
+     margin-left: auto;
+     margin-right: auto;
+     }
+	}	
+	
+	input::placeholder {
+	  color: white;
+	}
+    </style>
+    
+   
+    
+    </head>
+    <body background="@{'public/imagens/imgLogin.png'}">
+    	
+
+
+
+#{if flash.success}
+	<div>${flash.success}</div>
+#{/if}
+
+
+
+#{if flash.error}
+	<div class="msgVermelho">${flash.error}</div>
+#{/if}
+
+<img class="imgLogoLogin" src="@{'public/imagens/imgLogoLogin2.png'}">
+
+
+<div id="table">
+
+<br/>
+<p class="tituloLogin">FAÇA SEU LOGIN</p>
+
+<br/>
+
+<hr size="15">
+<br/>
+
+
+<br/>
+
+<form class="formClass" action="@{Login.logar}" method="post">
+<div id="divEmail">
+<img class="imgCmpLogin" src="@{'public/imagens/imgCmpLogin.png'}"> <input id="txtBusca" name="email" placeholder="Informe seu email..."> 
+</div>
+<br/>
+<br/>
+<div id="divSenha">
+<img class="imgCmpLogin" src="@{'public/imagens/imgCmpLogin2.png'}"><input id="txtBusca" name="senha" placeholder="Digite sua senha..." type="password"> 
+</div>
+<br/>
+
+<a id="LinkEsqueciSenha" href="@{Login.esqueciMinhaSenha}">Esqueceu sua senha?</a>
+<br/>
+<br/>
+<button class="botaoLogar"><h4>ENTRAR</h4></button>
+
+<br/>
+
+
+
+
+</form>
+<br/>
+<p class="txDados"><img class="imgCadeado"  src="@{'public/imagens/imgCadeado.png'}">Seus dados estão protegidos.</p>
+<br/>
+
+</div>
+
+
+
+ </body>
+</html>
